@@ -1,17 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-list>
+	<ion-list-header>
+		<ion-title> Single Selection </ion-title>
+	</ion-list-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+	<ion-item>
+		<ion-label>Category</ion-label>
+		<ion-select
+			[(value)]="category"
+			[(ngModel)]="category"
+			(ionChange)="selectCategory($event)"
+		>
+			<ion-select-option value="business">Business</ion-select-option>
+			<ion-select-option value="entertainment">Entertainment</ion-select-option>
+			<ion-select-option value="general">General</ion-select-option>
+			<ion-select-option value="sports">Sports</ion-select-option>
+			<ion-select-option value="health">Health</ion-select-option>
+			<ion-select-option value="science">Science</ion-select-option>
+			<ion-select-option value="technology">Technology</ion-select-option>
+		</ion-select>
+	</ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+	<ion-item>
+		<ion-label>Country</ion-label>
+		<ion-select
+			[value]="country"
+			[(ngModel)]="country"
+			(ionChange)="selectCountry($event)"
+		>
+			<ion-select-option value="ar">Argentina</ion-select-option>
+			<ion-select-option value="au">Australia</ion-select-option>
+			<ion-select-option value="br">Brazil</ion-select-option>
+			<ion-select-option value="ca">Canada</ion-select-option>
+			<ion-select-option value="cn">China</ion-select-option>
+			<ion-select-option value="co">Colombia</ion-select-option>
+			<ion-select-option value="cu">Cuba</ion-select-option>
+		</ion-select>
+	</ion-item>
+</ion-list>

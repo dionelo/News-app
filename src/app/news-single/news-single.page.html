@@ -1,9 +1,44 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>news-single</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button color="tertiary"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{article.source.name}}</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<ion-grid class="ion-no-padding">
+		<ion-row>
+			<ion-col class="ion-no-padding">
+				<ion-img [src]="article.urlToImage"></ion-img>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="text">
+				<h1 class="inside-title">{{article.title | split: "-"}}</h1>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="text">
+				<p class="description">{{article.description}}</p>
+				<p class="content">{{article.content}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-item lines="none" class="ion-margin-bottom">
+					<ion-icon
+						slot="start"
+						name="person-outline"
+						class="author-icon"
+					></ion-icon>
+					<ion-label> {{article.author}} </ion-label>
+					<ion-button [href]="article.url" color="warning"> 
+						Read 
+					</ion-button>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>

@@ -7,14 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { NewsSinglePageRoutingModule } from './news-single-routing.module';
 
 import { NewsSinglePage } from './news-single.page';
+import { SplitPipe } from '../pipes/split.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    NewsSinglePageRoutingModule
-  ],
-  declarations: [NewsSinglePage]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		NewsSinglePageRoutingModule,
+	],
+	declarations: [NewsSinglePage, SplitPipe],
 })
 export class NewsSinglePageModule {}
