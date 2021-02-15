@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
 	<ion-toolbar>
-		<ion-title> News </ion-title>
+		<ion-title class="app-title ion-text-center"> News Piper </ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 	>
 		<ion-img [src]="article.urlToImage"></ion-img>
 		<ion-card-content>
-			<ion-card-title class="title">
+			<ion-card-title class="article-title">
 				{{article.title | split: "-"}}
 			</ion-card-title>
 			<ion-button class="ion-margin-top" color="tertiary" expand="full" fill="outline">

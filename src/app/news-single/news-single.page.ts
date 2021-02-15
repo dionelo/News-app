@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+	InAppBrowser,
+	InAppBrowserOptions,
+} from '@ionic-native/in-app-browser/ngx';
 import { NewsService } from '../services/news.service';
 
 @Component({
@@ -10,11 +14,27 @@ import { NewsService } from '../services/news.service';
 export class NewsSinglePage implements OnInit {
 	article: any;
 
-	constructor(private newsService: NewsService, private router: Router) {}
+	constructor(
+		private newsService: NewsService,
+		private router: Router,
+		private iab: InAppBrowser
+	) {}
 
 	ngOnInit() {
-		console.log(this.newsService.currentArticle);
 		this.article = this.newsService.currentArticle;
 	}
 
+	openArticle() {
+		const url = this.article.url;
+		const target = '_self';
+		const options: InAppBrowserOptions = {
+			closebuttoncaption: '← BACK TO NEWS PIPER',
+			closebuttoncolor: '#222428',
+			toolbarcolor: '#ffc409',
+			hidenavigationbuttons: 'yes',
+			hideurlbar: 'yes'
+
+		};
+		this.iab.create(url, target, options);
+	}
 }

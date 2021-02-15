@@ -1,3 +1,10 @@
+ion-header .source-header {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8em;
+    // padding-bottom: 0%;
+    // margin-bottom: 0%;
+}
+
 ion-col.text {
     padding: 0 1rem;
 
@@ -14,11 +21,22 @@ ion-col.text {
     .content {
         font-family: 'Open Sans', sans-serif;
     }
+    .author-icon {
+        margin-right: 0.3rem;
+        font-size: 1em;
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+    }
+    
+    .author-name {
+        font-family: 'Vollkorn', serif;
+        font-size: 1em;
+        opacity: 0.7;
+    }
+    
+    .date {
+        font-size: smaller;
+        opacity: 0.5;
+    }
 }
-
-.author-icon {
-    margin-right: 0.3rem;
-}
-
-
 
